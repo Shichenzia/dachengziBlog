@@ -1,0 +1,15 @@
+{
+    "presets": [
+      "next/babel", "@babel/preset-react" 
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          // true 的时候才会编译less
+          "style": true
+        }
+      ]
+    ]
+  }
