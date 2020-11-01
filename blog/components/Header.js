@@ -1,14 +1,14 @@
 import React from 'react';
-import { Col, Row, Menu, Icon} from 'antd';
+import { Col, Row, Menu} from 'antd';
 import {HomeOutlined, YoutubeOutlined, BoldOutlined} from '@ant-design/icons'
-import '../styles/components/header.module.css'
+import '../styles/components/header.css'
 
 const Header = ()=>(
     <div className="header">
         <Row type="flex" justify="center">
-            <Col xs={24} sm={24} md={10} lg={10} xl={10}>
-                <span className="header_logo">大橙子</span>
-                <span className="header_text">一个程序狗的博客</span>
+            <Col xs={24} sm={24} md={10} lg={15} xl={12}>
+                <span className="header-logo">大橙子</span>
+                <span className="header-text">一个程序狗的博客</span>
             </Col>
             <Col 
                 className="menu-div" 
