@@ -1,10 +1,18 @@
+import React from 'react';
 import Head from 'next/head'
-import {List,Button} from 'antd'
+import Header from '../components/Header'
+
 
 export default function Home() {
   return (
-    <Head>
-      <title>home</title>
-    </Head>
+    <div>
+      <Head>
+        <title>home</title>
+      </Head>
+
+      <Header/>
+    </div>
+    
+    
   )
 }
