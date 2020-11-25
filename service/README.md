@@ -31,3 +31,11 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+
+/*************自己的笔记*************/
+
+
+app/controller/两个文件夹：
+admin（管理端使用的所有API接口）
+default（客户端使用的所有API接口）
+
