@@ -9,20 +9,20 @@ import Footer from '../components/Footer';
 import axios from 'axios';
 import Link from 'next/link'
 
-function Home(list) {
+function Types(list) {
   const [stateList,setStateList] = useState(list.data);  
 
   return (
     <div>
       <Head>
-        <title>Home</title>
+        <title>{stateList[0].type}</title>
       </Head>
       <Header/>
       <Row className="comm-main" justify="center" >
         <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}>
           <div>
             <List 
-                header={<div>最新日志</div>}
+                header={<div>{stateList[0].type}</div>}
                 itemLayout="vertical"
                 dataSource={stateList}
                 renderItem={(item)=>{
@@ -58,9 +58,11 @@ function Home(list) {
   )
 }
 
-Home.getInitialProps = async ()=>{
+Types.getInitialProps = async (context)=>{
+  let id = context.query.id;
+  // console.log(id);
   const promise = new Promise((resolve)=>{
-    axios('http://127.0.0.1:7001/default/getArticleList').then(
+    axios(`http://127.0.0.1:7001/default/getTypeById/${id}`).then(
       (res)=>{
         // console.log('获取成功',res.data);
         // console.log(new Date().getTime());
@@ -72,4 +74,4 @@ Home.getInitialProps = async ()=>{
 
 }
 
-export default Home;
+export default Types;
