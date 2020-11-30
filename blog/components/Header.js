@@ -2,12 +2,13 @@ import React from 'react';
 import { Col, Row, Menu} from 'antd';
 import {HomeOutlined, YoutubeOutlined, BoldOutlined} from '@ant-design/icons'
 import '../styles/components/header.css'
+import Link from 'next/link'
 
 const Header = ()=>(
     <div className="header">
         <Row type="flex" justify="center">
             <Col xs={24} sm={24} md={10} lg={15} xl={12}>
-                <span className="header-logo">大橙子</span>
+                <span className="header-logo"><Link href="/" >大橙子 </Link></span>
                 <span className="header-text">一个程序狗的博客</span>
             </Col>
             <Col 
@@ -17,15 +18,15 @@ const Header = ()=>(
                 <Menu  mode="horizontal">
                     <Menu.Item key="home">
                     <HomeOutlined />
-                        首页
+                        <Link href="/" >首页 </Link>
+                    </Menu.Item>
+                    <Menu.Item key="blog">
+                        <BoldOutlined />
+                        <Link href="/" >博客 </Link>
                     </Menu.Item>
                     <Menu.Item key="life">
-                        <BoldOutlined />
-                        博客
-                    </Menu.Item>
-                    <Menu.Item key="video">
                         <YoutubeOutlined />
-                        视频
+                        <Link href="/" >生活 </Link>
                     </Menu.Item>
                 </Menu>
             </Col>

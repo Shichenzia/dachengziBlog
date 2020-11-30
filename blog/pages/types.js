@@ -8,6 +8,7 @@ import Author from '../components/Author';
 import Footer from '../components/Footer';
 import axios from 'axios';
 import Link from 'next/link'
+import servicePath from '../config/apiUrl';
 
 function Types(list) {
   const [stateList,setStateList] = useState(list.data);  
@@ -62,7 +63,7 @@ Types.getInitialProps = async (context)=>{
   let id = context.query.id;
   // console.log(id);
   const promise = new Promise((resolve)=>{
-    axios(`http://127.0.0.1:7001/default/getTypeById/${id}`).then(
+    axios(`${servicePath.getTypeById}${id}`).then(
       (res)=>{
         // console.log('获取成功',res.data);
         // console.log(new Date().getTime());

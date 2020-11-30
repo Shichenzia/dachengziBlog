@@ -8,6 +8,7 @@ import Author from '../components/Author';
 import Footer from '../components/Footer';
 import axios from 'axios';
 import Link from 'next/link'
+import servicePath from '../config/apiUrl'
 
 function Home(list) {
   const [stateList,setStateList] = useState(list.data);  
@@ -60,7 +61,7 @@ function Home(list) {
 
 Home.getInitialProps = async ()=>{
   const promise = new Promise((resolve)=>{
-    axios('http://127.0.0.1:7001/default/getArticleList').then(
+    axios(servicePath.getArticleList).then(
       (res)=>{
         // console.log('获取成功',res.data);
         // console.log(new Date().getTime());

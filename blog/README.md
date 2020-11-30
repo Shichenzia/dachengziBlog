@@ -1,30 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+renderer: 这个是必须填写的，你可以通过自定义的Renderer渲染出自定义的格式
 
-## Getting Started
+gfm：启动类似Github样式的Markdown,填写true或者false
 
-First, run the development server:
+pedatic：只解析符合Markdown定义的，不修正Markdown的错误。填写true或者false
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+sanitize: 原始输出，忽略HTML标签，这个作为一个开发人员，一定要写flase
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+tables： 支持Github形式的表格，必须打开gfm选项
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+breaks: 支持Github换行符，必须打开gfm选项，填写true或者false
 
-## Learn More
+smartLists：优化列表输出，这个填写ture之后，你的样式会好看很多，所以建议设置成ture
 
-To learn more about Next.js, take a look at the following resources:
+highlight: 高亮显示规则 ，这里我们将使用highlight.js来完成
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+** 增加Code的高亮显示 **
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+在设置setOptions属性时，可以直接设置高亮显示，代码如下：
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+highlight: function (code) {
+            return hljs.highlightAuto(code).value;
+    }
